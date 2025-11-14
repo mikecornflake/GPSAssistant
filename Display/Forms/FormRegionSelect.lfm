@@ -1,0 +1,20 @@
+object frmSelectRegion: TfrmSelectRegion
+  Left = 389
+  Height = 240
+  Hint = 'Double click to select region'
+  Top = 165
+  Width = 320
+  AlphaBlend = True
+  AlphaBlendValue = 100
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsNone
+  Caption = 'Select Region'
+  Color = clRed
+  OnCreate = FormCreate
+  OnDblClick = FormDblClick
+  OnMouseDown = FormMouseDown
+  OnMouseMove = FormMouseMove
+  OnMouseUp = FormMouseUp
+  ShowHint = True
+  LCLVersion = '2.3.0.0'
+end
