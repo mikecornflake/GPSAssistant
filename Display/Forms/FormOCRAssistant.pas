@@ -1,7 +1,43 @@
 Unit FormOCRAssistant;
 
+{-------------------------------------------------------------------------------
+  Project   : GPS Assistant
+  Unit      : FormOCRAssistant (FormOCRAssistant.pas)
+  Description
+    Main Form and full functionality
+
+  Source
+    Copyright (c) 2025
+    Inspector Mike 2.0 Pty Ltd
+    Mike Thompson (mike.cornflake@gmail.com)
+
+  History
+    2022-10-04: Creation.  Project originally called OCRAssistant
+    2025-10-08: Finished fleshing out basic app
+    2025-11-07: Migrated to Github & renamed project to GSPAssistant
+
+  License
+    This file is part of GPSAssistant.
+
+    It is free software: you can redistribute it and/or modify it under the
+    terms of the GNU General Public License as published by the Free Software
+    Foundation, either version 3 of the License, or (at your option) any
+    later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+-------------------------------------------------------------------------------}
+
 {$mode objfpc}{$H+}
 {$WARN 6058 off : Call to subroutine "$1" marked as inline is not inlined}
+
 Interface
 
 Uses
@@ -878,6 +914,7 @@ End;
 
 Function TfrmOCRAssistant.Process(AValue: String): String;
 Begin
+  // TODO: Make this a user defined lookup
   Result := StringReplace(AValue, 'O', '0', [rfReplaceAll, rfIgnoreCase]);
   Result := StringReplace(Result, 'l', '1', [rfReplaceAll, rfIgnoreCase]);
   Result := StringReplace(Result, 'I', '1', [rfReplaceAll, rfIgnoreCase]);

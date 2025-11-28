@@ -5,36 +5,36 @@ inherited frmOCRAssistant: TfrmOCRAssistant
   Width = 619
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'OCR Assistant'
-  ClientHeight = 382
+  ClientHeight = 402
   ClientWidth = 619
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   inherited pbMain: TProgressBar
-    Top = 336
+    Top = 356
     Width = 619
   end
   inherited sbMain: TStatusBar
-    Top = 359
+    Top = 379
     Width = 619
   end
   object pcMain: TPageControl[2]
     Left = 0
-    Height = 336
+    Height = 356
     Top = 0
     Width = 619
-    ActivePage = tsRS232String
+    ActivePage = tsRegions
     Align = alClient
-    TabIndex = 5
+    TabIndex = 0
     TabOrder = 2
     OnChange = pcMainChange
     object tsRegions: TTabSheet
       Caption = 'Regions'
-      ClientHeight = 308
+      ClientHeight = 328
       ClientWidth = 611
       object lvRegions: TListView
         Left = 2
-        Height = 254
+        Height = 274
         Top = 48
         Width = 604
         Anchors = [akTop, akLeft, akRight, akBottom]
@@ -139,7 +139,7 @@ inherited frmOCRAssistant: TfrmOCRAssistant
     end
     object tsOCREngine: TTabSheet
       Caption = 'OCREngine'
-      ClientHeight = 308
+      ClientHeight = 328
       ClientWidth = 611
       object Label1: TLabel
         Left = 14
@@ -169,8 +169,8 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Width = 96
         Anchors = [akTop, akRight]
         Caption = 'Try defaults'
-        OnClick = btnTesseractDefaultsClick
         TabOrder = 1
+        OnClick = btnTesseractDefaultsClick
       end
       object Label2: TLabel
         Left = 15
@@ -231,7 +231,7 @@ inherited frmOCRAssistant: TfrmOCRAssistant
     end
     object tsTimer: TTabSheet
       Caption = 'Timer'
-      ClientHeight = 308
+      ClientHeight = 328
       ClientWidth = 611
       object edtInterval: TSpinEdit
         Left = 27
@@ -258,8 +258,8 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Top = 32
         Width = 75
         Caption = 'Start'
-        OnClick = btnTimerStartClick
         TabOrder = 1
+        OnClick = btnTimerStartClick
       end
       object rgTimer: TRadioGroup
         Left = 27
@@ -292,17 +292,17 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Width = 75
         Caption = 'Stop'
         Enabled = False
-        OnClick = btnTimerStopClick
         TabOrder = 3
+        OnClick = btnTimerStopClick
       end
     end
     object tsClipboard: TTabSheet
       Caption = 'Clipboard'
-      ClientHeight = 308
+      ClientHeight = 328
       ClientWidth = 611
       object memFields: TMemo
         Left = 8
-        Height = 186
+        Height = 206
         Top = 112
         Width = 590
         Anchors = [akTop, akLeft, akRight, akBottom]
@@ -344,8 +344,8 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Top = 51
         Width = 110
         Caption = 'Paste to clipboard'
-        OnClick = btnPasteToClipboardClick
         TabOrder = 2
+        OnClick = btnPasteToClipboardClick
       end
       object edtClipboardTest: TEdit
         Left = 136
@@ -358,7 +358,7 @@ inherited frmOCRAssistant: TfrmOCRAssistant
     end
     object tsGPS: TTabSheet
       Caption = 'GPS'
-      ClientHeight = 308
+      ClientHeight = 328
       ClientWidth = 611
       object Label7: TLabel
         Left = 8
@@ -373,7 +373,7 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Left = 8
         Height = 15
         Top = 8
-        Width = 275
+        Width = 277
         Caption = 'The following is used to find the relevant UTM  Zone'
       end
       object Label9: TLabel
@@ -409,12 +409,12 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Top = 66
         Width = 96
         Caption = 'Test UTM calcs'
-        OnClick = btnTestGPSClick
         TabOrder = 2
+        OnClick = btnTestGPSClick
       end
       object memGPS: TMemo
         Left = 8
-        Height = 189
+        Height = 209
         Top = 112
         Width = 590
         Anchors = [akTop, akLeft, akRight, akBottom]
@@ -436,8 +436,8 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Top = 66
         Width = 127
         Caption = 'Configure COM Port'
-        OnClick = btnConfigureRS232_1Click
         TabOrder = 4
+        OnClick = btnConfigureRS232_1Click
       end
       object rgGPSStrings: TCheckGroup
         Left = 325
@@ -469,7 +469,7 @@ inherited frmOCRAssistant: TfrmOCRAssistant
     end
     object tsRS232String: TTabSheet
       Caption = 'RS232 String'
-      ClientHeight = 308
+      ClientHeight = 328
       ClientWidth = 611
       object btnConfigureRS232_2: TButton
         Left = 8
@@ -477,8 +477,8 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Top = 83
         Width = 119
         Caption = 'Configure COM Port'
-        OnClick = btnConfigureRS232_1Click
         TabOrder = 0
+        OnClick = btnConfigureRS232_1Click
       end
       object Label11: TLabel
         Left = 8
@@ -504,8 +504,8 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Top = 51
         Width = 110
         Caption = 'Test String'
-        OnClick = btnTestRS232StringClick
         TabOrder = 2
+        OnClick = btnTestRS232StringClick
       end
       object edtRS232Test: TEdit
         Left = 136
@@ -526,7 +526,7 @@ inherited frmOCRAssistant: TfrmOCRAssistant
       end
       object memFields2: TMemo
         Left = 8
-        Height = 162
+        Height = 182
         Top = 136
         Width = 590
         Anchors = [akTop, akLeft, akRight, akBottom]
@@ -541,17 +541,17 @@ inherited frmOCRAssistant: TfrmOCRAssistant
         Top = 83
         Width = 75
         Caption = 'Button1'
-        OnClick = Button1Click
         TabOrder = 5
+        OnClick = Button1Click
       end
     end
     object tsLog: TTabSheet
       Caption = 'Log'
-      ClientHeight = 308
+      ClientHeight = 328
       ClientWidth = 611
       object memLog: TMemo
         Left = 0
-        Height = 308
+        Height = 328
         Top = 0
         Width = 611
         Align = alClient
@@ -992,6 +992,17 @@ inherited frmOCRAssistant: TfrmOCRAssistant
     Parity = pNone
     FlowControl = fcNone
     StopBits = sbOne
+    SynSer.Tag = 0
+    SynSer.Handle = -1
+    SynSer.RaiseExcept = False
+    SynSer.TestDSR = False
+    SynSer.TestCTS = False
+    SynSer.MaxLineLength = 0
+    SynSer.DeadlockTimeout = 30000
+    SynSer.LinuxLock = False
+    SynSer.ConvertLineEnd = False
+    SynSer.AtTimeout = 1000
+    SynSer.InterPacketTimeout = True
     Device = 'COM1'
     RcvLineCRLF = False
     OnRxData = LazSerialRxData

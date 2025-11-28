@@ -16,6 +16,11 @@
       </XPManifest>
       <Icon Value="0"/>
     </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MinorVersionNr Value="3"/>
+      <StringTable CompanyName="Inspector Mike 2.0 Pty Ltd" FileDescription="Outputs GPS Strings based on OCR of onscreen coordinators " InternalName="GPS Assistant"/>
+    </VersionInfo>
     <BuildModes>
       <Item Name="NEXUS" Default="True"/>
       <Item Name="COABIS">

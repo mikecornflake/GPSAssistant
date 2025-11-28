@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="24"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="80"/>
       </Unit>
       <Unit>
         <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
@@ -19,10 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="724"/>
-        <CursorPos X="25" Y="734"/>
-        <UsageCount Value="79"/>
+        <CursorPos X="34" Y="16"/>
+        <UsageCount Value="80"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Display\Forms\FormRegionSelect.pas"/>
@@ -30,10 +30,11 @@
         <ComponentName Value="frmSelectRegion"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="86"/>
-        <CursorPos X="26" Y="114"/>
-        <UsageCount Value="79"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="52"/>
+        <CursorPos X="53" Y="8"/>
+        <UsageCount Value="80"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="B:\fpc\rtl\objpas\fgl.pp"/>
@@ -622,8 +623,22 @@
         <EditorIndex Value="-1"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="31" Y="48"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\InspectorMike-common\Support\GPSSupport.pas"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="10" Y="23"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="10">
+    <JumpHistory HistoryIndex="20">
       <Position>
         <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
         <Caret Line="261" Column="32" TopLine="252"/>
@@ -667,6 +682,46 @@
       <Position>
         <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
         <Caret Line="473" Column="18" TopLine="453"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormRegionSelect.pas"/>
+        <Caret Line="84" Column="23" TopLine="71"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="3" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="694" Column="3" TopLine="690"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="187" Column="14" TopLine="169"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="875" Column="3" TopLine="869"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
+        <Caret Line="15" Column="10"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
+        <Caret Line="78" Column="23" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="189" Column="22" TopLine="173"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="499" Column="3" TopLine="837"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="192" Column="14" TopLine="174"/>
       </Position>
     </JumpHistory>
     <RunParams>
