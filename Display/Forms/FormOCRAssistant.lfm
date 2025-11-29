@@ -23,9 +23,9 @@ inherited frmOCRAssistant: TfrmOCRAssistant
     Height = 356
     Top = 0
     Width = 619
-    ActivePage = tsRegions
+    ActivePage = tsGPS
     Align = alClient
-    TabIndex = 0
+    TabIndex = 4
     TabOrder = 2
     OnChange = pcMainChange
     object tsRegions: TTabSheet

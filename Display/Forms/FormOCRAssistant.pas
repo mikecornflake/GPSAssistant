@@ -15,6 +15,7 @@ Unit FormOCRAssistant;
     2022-10-04: Creation.  Project originally called OCRAssistant
     2025-10-08: Finished fleshing out basic app
     2025-11-07: Migrated to Github & renamed project to GSPAssistant
+    2025-11-29: Fixes following offshore use (primary driver was adding WhiteList)
 
   License
     This file is part of GPSAssistant.
@@ -59,14 +60,14 @@ Type
   Public
     Function Bounds: TRect;
     Procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer);
-    Property Top: Integer read FTop write FTop;
-    Property Left: Integer read FLeft write FLeft;
-    Property Width: Integer read FWidth write FWidth;
-    Property Height: Integer read FHeight write FHeight;
+    Property Top: Integer Read FTop Write FTop;
+    Property Left: Integer Read FLeft Write FLeft;
+    Property Width: Integer Read FWidth Write FWidth;
+    Property Height: Integer Read FHeight Write FHeight;
 
-    Property Name: String read FName write FName;
+    Property Name: String Read FName Write FName;
 
-    Property AsText: String read GetAsText write SetAsText;
+    Property AsText: String Read GetAsText Write SetAsText;
   End;
 
   TRegionList = Specialize TFPGObjectList<TRegion>;
@@ -163,7 +164,7 @@ Type
     Procedure btnTimerStartClick(Sender: TObject);
     Procedure btnTimerStopClick(Sender: TObject);
     Procedure btnTestGPSClick(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    Procedure Button1Click(Sender: TObject);
     Procedure FormActivate(Sender: TObject);
     Procedure FormCreate(Sender: TObject);
     Procedure FormDestroy(Sender: TObject);
@@ -179,9 +180,11 @@ Type
     Procedure trayMainClick(Sender: TObject);
     Procedure trayMainDblClick(Sender: TObject);
   Private
-    FHotKeyCaptureID: Integer;
-    FHotKeyTimerID: Integer;
+    //FHotKeyCaptureID: Integer;
+    //FHotKeyTimerID: Integer;
     FRegions: TRegionList;
+    FTesseractOptions: String;
+    FInTimer: Boolean;
 
     Procedure CloseSerial;
     Function OCRRegion(ARegion: TRegion): String;
@@ -190,7 +193,8 @@ Type
     Procedure OutputRS232;
     Function ParseFormat(AValue: String): String;
     Function Process(AValue: String): String;
-    Procedure GrabDesktop(ABitmap: Graphics.TBitmap; ALeft, ATop, AWidth, AHeight: Integer);
+    Procedure GrabDesktop(ABitmap: Graphics.TBitmap; ALeft, ATop, AWidth, AHeight: Integer;
+      ABorder: Integer = 0);
     Procedure HideMe;
     Procedure Log(AValue: String; AIndent: String = '');
     Procedure SetListViewValue(ARegion: Tregion; AValue: String; ASubStringIndex: Integer);
@@ -296,7 +300,7 @@ Begin
   oTemp := TStringList.Create;
   Try
     oTemp.NameValueSeparator := '=';
-    oTemp.StrictDelimiter:=True;
+    oTemp.StrictDelimiter := True;
     oTemp.Delimiter := ',';
 
     oTemp.DelimitedText := AValue;
@@ -334,13 +338,19 @@ End;
 
 Procedure TfrmOCRAssistant.FormCreate(Sender: TObject);
 Begin
+  FInTimer := False;
+
   ilImages.GetIcon(9, trayMain.Icon);  // Red
 
-  FHotKeyCaptureID := GlobalAddAtom('OCRAssistant.Capture');
-  RegisterHotKey(Handle, FHotKeyCaptureID, MOD_CONTROL, VK_F1);
+  // The below code predated exporting the GPS string on RS232.
+  // That automation removed the need for keyboard shortcuts
+  // However, leaving the code commented in case I need it elsewhere...
 
-  FHotKeyTimerID := GlobalAddAtom('OCRAssistant.Timer');
-  RegisterHotKey(Handle, FHotKeyTimerID, MOD_CONTROL, VK_F2);
+  //FHotKeyCaptureID := GlobalAddAtom('GPSAssistant.Capture');
+  //RegisterHotKey(Handle, FHotKeyCaptureID, MOD_CONTROL, VK_F1);
+
+  //FHotKeyTimerID := GlobalAddAtom('GPSAssistant.Timer');
+  //RegisterHotKey(Handle, FHotKeyTimerID, MOD_CONTROL, VK_F2);
 
   edtTesseractFolder.Text := TesseractPath;
 
@@ -358,11 +368,11 @@ Procedure TfrmOCRAssistant.FormDestroy(Sender: TObject);
 Begin
   CloseSerial;
 
-  UnRegisterHotKey(Handle, FHotKeyCaptureID);
-  GlobalDeleteAtom(FHotKeyCaptureID);
+  //UnRegisterHotKey(Handle, FHotKeyCaptureID);
+  //GlobalDeleteAtom(FHotKeyCaptureID);
 
-  UnRegisterHotKey(Handle, FHotKeyTimerID);
-  GlobalDeleteAtom(FHotKeyTimerID);
+  //UnRegisterHotKey(Handle, FHotKeyTimerID);
+  //GlobalDeleteAtom(FHotKeyTimerID);
 
   FreeAndNil(FRegions);
 End;
@@ -442,19 +452,27 @@ End;
 
 Procedure TfrmOCRAssistant.tmrMainTimer(Sender: TObject);
 Begin
-  If fRegions.Count > 0 Then
-    Case (rgTimer.ItemIndex) Of
-      0: btnPasteToClipboard.Click;
-      1: OutputGPS;
-      2: OutputRS232;
-    End
-  Else
-  Begin
-    btnTimerStop.Click;
+  If FInTimer Then
+    Exit;
 
-    RefreshUI;
+  FInTimer := True;
+  Try
+    If fRegions.Count > 0 Then
+      Case (rgTimer.ItemIndex) Of
+        0: btnPasteToClipboard.Click;
+        1: OutputGPS;
+        2: OutputRS232;
+      End
+    Else
+    Begin
+      btnTimerStop.Click;
 
-    Log('Stopping timer.  No regions enabled');
+      RefreshUI;
+
+      Log('Stopping timer.  No regions enabled');
+    End;
+  Finally
+    FInTimer := False;
   End;
 End;
 
@@ -811,12 +829,12 @@ Begin
   //memGPS.Perform(EM_SCROLLCARET, 0, 0);
 End;
 
-procedure TfrmOCRAssistant.Button1Click(Sender: TObject);
-begin
+Procedure TfrmOCRAssistant.Button1Click(Sender: TObject);
+Begin
   ShowMessage(LazSerial.SettingsAsCommaSep);
   ShowMessage(LazSerial.SettingsAsXML);
   ShowMessage(LazSerial.ToString);
-end;
+End;
 
 Procedure TfrmOCRAssistant.FormActivate(Sender: TObject);
 Begin
@@ -871,6 +889,7 @@ Function TfrmOCRAssistant.OCRRegion(ARegion: TRegion): String;
 Var
   oBitmap: Graphics.TBitmap;
   sTempDir: String;
+  sTempFile: String;
 Begin
   sTempDir := IncludeTrailingBackslash(SysUtils.GetTempDir(False)) +
     ChangeFileExt(ExtractFileName(Application.ExeName), '');
@@ -880,10 +899,15 @@ Begin
   oBitmap := Graphics.TBitmap.Create;
   Busy := True;
   Try
-    GrabDesktop(oBitmap, ARegion.Left, ARegion.Top, ARegion.Width, ARegion.Height);
-    oBitmap.SaveToFile(sTempDir + '\OCR.bmp');
+    GrabDesktop(oBitmap, ARegion.Left, ARegion.Top, ARegion.Width, ARegion.Height, 5);
 
-    Result := Trim(OCR(sTempDir + '\OCR.bmp'));
+    sTempFile := UniqueFilename(sTempDir, 'OCR', '.bmp', False);
+    oBitmap.SaveToFile(sTempFile);
+
+    Result := Trim(OCR(sTempFile, FTesseractOptions));
+
+    // Cleanup after ourselves
+    SysUtils.DeleteFile(sTempFile);
 
     SetListViewValue(ARegion, Result, 4);
     SetListViewValue(ARegion, Process(Result), 5);
@@ -915,6 +939,7 @@ End;
 Function TfrmOCRAssistant.Process(AValue: String): String;
 Begin
   // TODO: Make this a user defined lookup
+  // TODO: This code is now probably deprecated by inlcude Whitelist...
   Result := StringReplace(AValue, 'O', '0', [rfReplaceAll, rfIgnoreCase]);
   Result := StringReplace(Result, 'l', '1', [rfReplaceAll, rfIgnoreCase]);
   Result := StringReplace(Result, 'I', '1', [rfReplaceAll, rfIgnoreCase]);
@@ -925,21 +950,47 @@ Begin
 End;
 
 Procedure TfrmOCRAssistant.GrabDesktop(ABitmap: Graphics.TBitmap;
-  ALeft, ATop, AWidth, AHeight: Integer);
+  ALeft, ATop, AWidth, AHeight: Integer; ABorder: Integer);
 Var
   DC: HDC;
   hWin: HWND;
+  bmpTemp: Graphics.TBitmap;
+  clBorder: TColor;
 Begin
+  If ABorder < 0 Then
+    ABorder := 0;
+
   hWin := GetDesktopWindow;
   DC := GetDC(hWin);
+  bmpTemp := Graphics.TBitmap.Create;
   Try
-    ABitmap.Width := AWidth;
-    ABitmap.Height := AHeight;
-    ABitmap.Canvas.Brush.Color := clWhite;
+    // First: grab just the requested region into a temp bitmap
+    bmpTemp.PixelFormat := pf24bit;
+    bmpTemp.Width := AWidth;
+    bmpTemp.Height := AHeight;
+
+    BitBlt(bmpTemp.Canvas.Handle, 0, 0, AWidth, AHeight,
+      DC, ALeft, ATop, SRCCOPY);
+
+    // Get border colour from bottom-left pixel of the *original* capture
+    If (AWidth > 0) And (AHeight > 0) Then
+      clBorder := bmpTemp.Canvas.Pixels[0, AHeight - 1]
+    Else
+      clBorder := clWhite; // fallback
+
+    // Now prepare the destination bitmap: original size + border on all sides
+    ABitmap.PixelFormat := pf24bit;
+    ABitmap.Width := AWidth + (ABorder * 2);
+    ABitmap.Height := AHeight + (ABorder * 2);
+
+    // Fill entire bitmap with the border colour
+    ABitmap.Canvas.Brush.Color := clBorder;
     ABitmap.Canvas.FillRect(0, 0, ABitmap.Width, ABitmap.Height);
 
-    BitBlt(ABitmap.Canvas.Handle, 0, 0, AWidth, AHeight, DC, ALeft, ATop, SRCCOPY);
+    // Draw original capture into the centre (offset by ABorder)
+    ABitmap.Canvas.Draw(ABorder, ABorder, bmpTemp);
   Finally
+    bmpTemp.Free;
     ReleaseDC(hWin, DC);
   End;
 End;
@@ -980,13 +1031,13 @@ End;
 
 Procedure TfrmOCRAssistant.WMHotKey(Var Msg: TMessage);
 Begin
-  If Msg.wParam = FHotKeyCaptureID Then
-    pmnuClipboard.Click
-  Else If Msg.wParam = FHotKeyTimerID Then
-    If tmrMain.Enabled Then
-      btnTimerStop.Click
-    Else
-      btnTimerStart.Click;
+  //  If Msg.wParam = FHotKeyCaptureID Then
+  //    pmnuClipboard.Click
+  //  Else If Msg.wParam = FHotKeyTimerID Then
+  //    If tmrMain.Enabled Then
+  //      btnTimerStop.Click
+  //    Else
+  //      btnTimerStart.Click;
 End;
 
 Procedure TfrmOCRAssistant.LoadGlobalSettings(oInifile: TIniFile);
@@ -994,8 +1045,10 @@ Begin
   Inherited LoadGlobalSettings(oInifile);
 
   InitializeTesseract;
-  SetTesseractPath(ExpandFolder(oInifile.ReadString('Tesseract', 'Folder',
-    'C:\Program Files\Tesseract-OCR')));
+
+  If Not TesseractAvailable Then
+    SetTesseractPath(ExpandFolder(oInifile.ReadString('Tesseract', 'Folder',
+      'C:\Program Files\Tesseract-OCR')));
 
   If Not TesseractAvailable Then
     SetTesseractPath('C:\Program Files\Tesseract-OCR');
@@ -1008,13 +1061,19 @@ Begin
   Else
     edtTesseractFolder.Text := TesseractPath;
 
+  // For now, allow reading numerics only
+  // TODO This obviously needs to be made field specific (ie read Date, Time etc);
+  // 3 = Default Engine
+  // 8 = OCR is interpreting a single word
+  // The whitelist means we're enforcing numeric only
+  FTesseractOptions := TesseractSupport.BuildOptionsString(3, 8, '0123456789.');
+
   edtInterval.Value := oIniFile.ReadInteger('Timer', 'Interval', 1);
   rgTimer.ItemIndex := oIniFile.ReadInteger('Timer', 'Output', 1);
 
   edtClipboardString.Text := oInifile.ReadString('Clipboard', 'String',
     '%Northings_processed%, %Eastings_processed%');
 
-  // Jansz Production Spool
   edtLatitude.Value := oInifile.ReadFloat('GPS', 'Latitude', -19.809287);
   edtLongitude.Value := oInifile.ReadFloat('GPS', 'Longitude', 114.608388);
 
