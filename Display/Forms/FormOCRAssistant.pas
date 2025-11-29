@@ -13,8 +13,9 @@ Unit FormOCRAssistant;
 
   History
     2022-10-04: Creation.  Project originally called OCRAssistant
-    2025-10-08: Finished fleshing out basic app
-    2025-11-07: Migrated to Github & renamed project to GSPAssistant
+    2022-10-08: Finished fleshing out basic app
+    2025-11-07: Migrated from SourceForge (private) to Github (public)
+                Renamed project to GSPAssistant
     2025-11-29: Fixes following offshore use (primary driver was adding WhiteList)
 
   License
@@ -210,7 +211,7 @@ Type
 
 
 Const
-  BASE_HINT = 'OCR chosen regions of the main screen and output to Clipboard';
+  BASE_HINT = 'OCR chosen regions of the main screen. Outputs as GPS or to Clipboard';
 
 Var
   frmOCRAssistant: TfrmOCRAssistant;
@@ -1047,15 +1048,9 @@ Begin
   InitializeTesseract;
 
   If Not TesseractAvailable Then
-    SetTesseractPath(ExpandFolder(oInifile.ReadString('Tesseract', 'Folder',
-      'C:\Program Files\Tesseract-OCR')));
-
-  If Not TesseractAvailable Then
-    SetTesseractPath('C:\Program Files\Tesseract-OCR');
-
-  If Not TesseractAvailable Then
   Begin
     ShowMessage('No OCR Engine Found');
+    // TODO Renable tsRegions after user loads a valid folder...
     tsRegions.Enabled := False;
   End
   Else

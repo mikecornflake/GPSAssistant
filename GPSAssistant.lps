@@ -8,10 +8,9 @@
       <Unit>
         <Filename Value="GPSAssistant.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="41" Y="13"/>
-        <UsageCount Value="86"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="94"/>
       </Unit>
       <Unit>
         <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
@@ -20,10 +19,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="83" Y="18"/>
-        <UsageCount Value="86"/>
+        <TopLine Value="1043"/>
+        <CursorPos X="65" Y="1053"/>
+        <UsageCount Value="94"/>
         <Bookmarks Count="1">
-          <Item0 X="18" Y="905" Left="1" Top="878" ID="1"/>
+          <Item0 X="18" Y="906" Left="1" Top="879" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -34,11 +34,10 @@
         <ComponentName Value="frmSelectRegion"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="52"/>
         <CursorPos X="53" Y="8"/>
-        <UsageCount Value="86"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="94"/>
       </Unit>
       <Unit>
         <Filename Value="B:\fpc\rtl\objpas\fgl.pp"/>
@@ -629,17 +628,17 @@
       </Unit>
       <Unit>
         <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="12"/>
-        <CursorPos X="60" Y="35"/>
-        <UsageCount Value="13"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="99"/>
+        <CursorPos X="3" Y="106"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\InspectorMike-common\Support\GPSSupport.pas"/>
-        <EditorIndex Value="2"/>
-        <CursorPos X="18" Y="18"/>
-        <UsageCount Value="13"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="23" Y="15"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -650,21 +649,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="322"/>
         <CursorPos X="3" Y="333"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="B:\Apps\Dev\lazarus_trunk\fpcsrc\rtl\objpas\sysutils\filutilh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="187"/>
         <CursorPos X="10" Y="205"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="B:\Apps\Dev\lazarus_trunk\fpcsrc\rtl\objpas\sysutils\filutil.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="290"/>
         <CursorPos X="3" Y="292"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="B:\Apps\Dev\lazarus_trunk\fpcsrc\rtl\win\sysutils.pp"/>
@@ -676,10 +675,10 @@
       </Unit>
       <Unit>
         <Filename Value="..\InspectorMike-common\Support\FileSupport.pas"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="28"/>
-        <CursorPos X="66" Y="121"/>
-        <UsageCount Value="13"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="35"/>
+        <CursorPos X="26" Y="45"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -713,35 +712,35 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="87"/>
         <CursorPos X="10" Y="106"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="B:\Apps\Dev\lazarus_trunk\lazarus\components\lazutils\fileutil.pas"/>
         <UnitName Value="FileUtil"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="B:\Apps\Dev\lazarus_trunk\fpcsrc\rtl\objpas\sysutils\finah.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="7"/>
-        <CursorPos X="10" Y="27"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="6"/>
+        <CursorPos X="10" Y="29"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="B:\Apps\Dev\lazarus_trunk\fpcsrc\rtl\objpas\sysutils\fina.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="54"/>
-        <CursorPos X="3" Y="59"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="160"/>
+        <CursorPos X="2" Y="165"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="B:\Apps\Dev\lazarus_trunk\fpcsrc\rtl\inc\fexpand.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="105"/>
         <CursorPos X="10" Y="128"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="B:\Apps\Dev\lazarus_trunk\lazarus\lcl\lclmessageglue.pas"/>
@@ -749,128 +748,165 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="100"/>
         <CursorPos X="5" Y="109"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="175"/>
+        <CursorPos X="35" Y="195"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\SerialProcessor\Display\FormMain.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="298"/>
+        <CursorPos X="24" Y="323"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\InspectorMike-common\Packages\IM_application.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="45" Y="12"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="B:\Apps\Dev\lazarus_trunk\fpcsrc\rtl\objpas\fgl.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1060"/>
+        <CursorPos X="10" Y="1081"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="B:\Apps\Dev\lazarus_trunk\lazarus\components\synedit\syneditwrappedview.pp"/>
+        <UnitName Value="SynEditWrappedView"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1013"/>
+        <CursorPos X="27" Y="1032"/>
         <UsageCount Value="10"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
-        <Caret Line="713" TopLine="695"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="38" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
-        <Caret Line="711" TopLine="695"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="36" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
-        <Caret Line="189" Column="14" TopLine="171"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="213" Column="3" TopLine="209"/>
       </Position>
       <Position>
-        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
-        <Caret Line="907" TopLine="887"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="28" Column="21" TopLine="8"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="135" TopLine="116"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="79" Column="3" TopLine="72"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="142" TopLine="122"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="25" Column="10" TopLine="9"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="145" TopLine="122"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="199" Column="3" TopLine="197"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="144" TopLine="122"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="26" Column="10" TopLine="6"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="147" TopLine="128"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="204" Column="3" TopLine="202"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="150" TopLine="128"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="27" Column="10" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="153" TopLine="128"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="209" Column="3" TopLine="207"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="156" TopLine="135"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="261" Column="38" TopLine="246"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="155" TopLine="135"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="3" Column="5"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="156" TopLine="135"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="28" Column="32"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="155" TopLine="135"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="79" Column="3" TopLine="72"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="158" TopLine="135"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="25" Column="14" TopLine="9"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="73" Column="33" TopLine="66"/>
-      </Position>
-      <Position>
-        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
-        <Caret Line="907" TopLine="887"/>
-      </Position>
-      <Position>
-        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
-        <Caret Line="906" TopLine="898"/>
-      </Position>
-      <Position>
-        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
-        <Caret Line="185" Column="22" TopLine="167"/>
-      </Position>
-      <Position>
-        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
-        <Caret Line="906" Column="52" TopLine="875"/>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="63" Column="3" TopLine="46"/>
       </Position>
       <Position>
         <Filename Value="..\InspectorMike-common\Support\FileSupport.pas"/>
-        <Caret Line="149" Column="33" TopLine="326"/>
+        <Caret Line="56" Column="17" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\FileSupport.pas"/>
+        <Caret Line="154" Column="107" TopLine="129"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\StringSupport.pas"/>
+        <Caret Line="194" TopLine="175"/>
       </Position>
       <Position>
         <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="148" Column="29" TopLine="134"/>
+        <Caret Line="15" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="271" Column="9" TopLine="193"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\FileSupport.pas"/>
+        <Caret Line="34" Column="58" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\FileSupport.pas"/>
+        <Caret Line="192" Column="74" TopLine="173"/>
       </Position>
       <Position>
         <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="60" Column="36" TopLine="52"/>
+        <Caret Line="15" Column="21"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\FileSupport.pas"/>
+        <Caret Line="179" Column="41" TopLine="175"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\FileSupport.pas"/>
+        <Caret Line="35" Column="41" TopLine="35"/>
+      </Position>
+      <Position>
+        <Filename Value="..\InspectorMike-common\Support\FileSupport.pas"/>
+        <Caret Line="180" Column="22" TopLine="178"/>
       </Position>
       <Position>
         <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="162" Column="38" TopLine="145"/>
+        <Caret Line="15" Column="24" TopLine="6"/>
       </Position>
       <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="161" Column="32" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-      </Position>
-      <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="106" Column="45" TopLine="102"/>
-      </Position>
-      <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="121" Column="40" TopLine="106"/>
-      </Position>
-      <Position>
-        <Filename Value="..\InspectorMike-common\Support\TesseractSupport.pas"/>
-        <Caret Line="187" Column="5" TopLine="150"/>
+        <Filename Value="Display\Forms\FormOCRAssistant.pas"/>
+        <Caret Line="208" Column="26" TopLine="194"/>
       </Position>
     </JumpHistory>
     <RunParams>
