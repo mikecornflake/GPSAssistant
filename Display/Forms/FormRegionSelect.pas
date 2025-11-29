@@ -37,8 +37,6 @@ Unit FormRegionSelect;
     SPDX-License-Identifier: GPL-3.0-or-later
 -------------------------------------------------------------------------------}
 
-
-
 {$mode ObjFPC}{$H+}
 
 Interface
